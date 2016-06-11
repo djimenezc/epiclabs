@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "describe": true,
+    "it": true
+  },
+  "rules": {
+
+    "padded-blocks" : ["off"]
+  }
+}
+

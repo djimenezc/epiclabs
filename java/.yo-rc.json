@@ -1,0 +1,9 @@
+{
+  "generator-java": {
+    "title": "Delete Node",
+    "description": "Delete node in a Linked list. Implement an algorithm that deletes a given node from a linked list. Your algorithm will receive just the node to be deleted, and won't have access to linked list head.",
+    "author": "david jimenez",
+    "email": "david.jimenez.calvo.contractor@bbva.com",
+    "namespace": "com.djimenezc"
+  }
+}
