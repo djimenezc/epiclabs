@@ -1,6 +1,10 @@
 # unique-characters [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Implement an algorithm that checks if a string has all unique characters. Try to do the same reducing amount of memory used
 
+I have choose two strategies to resolve this problem:
+1. Looping through each char of a string and keeping the visited chars in a map. If a char is visited more than once the string does not have unique chars.
+2. The second aproach is to sort the chars in the string and look over all the chars. Two consecutive chars cannot be equal in a unique character string
+
 ## Installation
 
 ```sh
@@ -12,7 +16,11 @@ $ npm install --save unique-characters
 ```js
 var uniqueCharacters = require('unique-characters');
 
-uniqueCharacters('Rainbow');
+uniqueCharacters.isUniqueCharactersMap('aaaaa'); //false
+uniqueCharacters.isUniqueCharactersMap('abczd'); //true
+
+uniqueCharacters.isUniqueCharactersSorting('aaaaa'); //false
+uniqueCharacters.isUniqueCharactersSorting('abczd'); //true
 ```
 ## License
 
