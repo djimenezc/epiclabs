@@ -17,15 +17,15 @@ function isUniqueCharactersMap(text) {
 }
 
 /**
- * Checks if a string has all unique characters using a map
+ * Checks if a string has all unique characters using a sorting algorithm
  * @returns {boolean}
  * @param text
  */
-function isUniqueCharacters(text) {
+function isUniqueCharactersSorting(text) {
   return !text;
 }
 
 export {
   isUniqueCharactersMap,
-  isUniqueCharacters,
+  isUniqueCharactersSorting,
 };
