@@ -10,6 +10,8 @@ const coveralls = require('gulp-coveralls');
 const babel = require('gulp-babel');
 const del = require('del');
 const isparta = require('isparta');
+const sourcemaps = require('gulp-sourcemaps');
+const gutil = require('gulp-util');
 
 /*eslint-disable */
 
@@ -68,8 +70,16 @@ gulp.task('coveralls', ['test'], function () {
 });
 
 gulp.task('babel', ['clean'], function () {
-  return gulp.src('lib/**/*.js')
+  return gulp.src(['lib/**/*.js','test/**/*.js'])
+    .pipe(sourcemaps.init())
     .pipe(babel())
+    .on('error', gutil.log)
+    .pipe(sourcemaps.write('.', {
+      includeContent: false,
+      sourceRoot: function(file) {
+        return path.relative(file.path, __dirname);
+      }
+    }))
     .pipe(gulp.dest('dist'));
 });
 
