@@ -3,7 +3,7 @@ package com.djimenezc;
 /**
  * Created by david on 12/06/2016.
  */
-public class Node<E> {
+public class Node<E extends Object> {
 
   private E value;
   private Node<E> previousNode;
@@ -27,5 +27,13 @@ public class Node<E> {
 
   public void setPreviousNode(Node<E> previousNode) {
     this.previousNode = previousNode;
+  }
+
+  public Node<E> getNextNode() {
+    return nextNode;
+  }
+
+  public void setNextNode(Node<E> nextNode) {
+    this.nextNode = nextNode;
   }
 }
