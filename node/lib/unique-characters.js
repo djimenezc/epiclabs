@@ -4,16 +4,17 @@
  * @returns {boolean}
  */
 function isUniqueCharactersMap(text) {
-  // const charVisitedArray = {};
-  //
-  // return text.split('').forEach((char) => {
-  //   if (charVisitedArray[char]) {
-  //     return false;
-  //   } else {
-  //     charVisitedArray[char] = true;
-  //   }
-  // });
-  return !text;
+  const charVisitedArray = {};
+
+  return text.split('').every((char) => {
+
+    if (charVisitedArray[char]) {
+      charVisitedArray[char]++;
+    } else {
+      charVisitedArray[char] = 1;
+    }
+    return charVisitedArray[char] < 2;
+  });
 }
 
 /**
