@@ -39,6 +39,12 @@ function isUniqueCharactersSorting(text) {
   return stringSorted.every((isCharRepeated));
 }
 
+
+/**
+ * @module
+ * @description Implement an algorithm that checks if a string has all unique
+ * characters. Try to do the same reducing amount of memory used
+ */
 export {
   isUniqueCharactersMap,
   isUniqueCharactersSorting,

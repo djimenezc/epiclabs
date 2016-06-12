@@ -1,7 +1,7 @@
 {
-  "name": "unique-characters",
+  "name": "epic-labs-interview-exercises",
   "version": "0.0.0",
-  "description": "Implement an algorithm that checks if a string has all unique characters. Try to do the same reducing amount of memory used",
+  "description": "Epic labs interview technical tests",
   "homepage": "",
   "author": {
     "name": "David Jimenez",
@@ -50,11 +50,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://djimenezc/unique-characters"
+    "url": "https://bitbucket.org/djimenezc/epiclabs"
   },
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp",
+    "watch": "gulp watch"
   },
   "license": "MIT"
 }
