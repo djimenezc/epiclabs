@@ -1,5 +1,4 @@
 #include <iostream>
-#include <time.h>
 
 using namespace std;
 
@@ -12,13 +11,13 @@ using namespace std;
  *     With this method the number of allocate calls is reduced significantly as the time metrics shown.
  */
 
-void allocate_mem(int ***arr, int n, int m) {
+void allocate_mem(int ***array, int nRow, int nColumn) {
 
-    *arr = (int **) malloc(n * sizeof(int *));
+    *array = (int **) malloc(nRow * sizeof(int *));
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < nRow; i++) {
 
-        (*arr)[i] = (int *) malloc(m * sizeof(int));
+        (*array)[i] = (int *) malloc(nColumn * sizeof(int));
     }
 }
 
@@ -32,15 +31,15 @@ void deallocate_mem(int ***arr, int n) {
     free(*arr);
 }
 
-int *allocate_mem_consecutive_blocks(int ***arr, int n, int m) {
+int *allocate_mem_consecutive_blocks(int ***array, int nRow, int nColumn) {
 
-    *arr = (int **) malloc(n * sizeof(int *));
+    *array = (int **) malloc(nRow * sizeof(int *));
 
-    int *arr_data = (int *) malloc(n * m * sizeof(int));
+    int *arr_data = (int *) malloc(nRow * nColumn * sizeof(int));
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < nRow; i++) {
 
-        (*arr)[i] = arr_data + i * m;
+        (*array)[i] = arr_data + i * nColumn;
     }
 
     return arr_data; //free point
