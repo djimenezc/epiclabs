@@ -1,4 +1,4 @@
-package com.djimenezc;
+package com.djimenezc.linkedList;
 
 import java.util.Collection;
 import java.util.Iterator;

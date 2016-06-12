@@ -1,4 +1,4 @@
-package com.djimenezc;
+package com.djimenezc.linkedList;
 
 import org.junit.After;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package com.djimenezc;
+package com.djimenezc.linkedList;
 
 /**
  * Created by david on 12/06/2016.
