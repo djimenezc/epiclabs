@@ -7,14 +7,14 @@ import java.util.ListIterator;
 
 /**
  * Double linked list that have no access to the list head.
- *
+ * <p>
  * Implement an algorithm that deletes a given node from a linked list.
  * Your algorithm will receive just the node to be deleted, and won't have access to linked list head.
  * <pre>
  * Ej: Given linked list: A -> B -> C -> D -> E
  * </pre>
  * your algorithm will be called as deleteNode(D) and resulting linked list should be A -> B-> C-> E
- *
+ * <p>
  * In this list implementation is kept a reference to the last added element to the list. The list can be looked over
  * because each node has a reference to previous and next node in the list.
  *
@@ -40,27 +40,26 @@ class EpicLinkedListDavid<E extends Object> implements List {
 
   /**
    * Remove a node with an specific value and adjust the node references.
+   *
    * @param value value to remove from the list
    * @return the current list
-     */
+   */
   public EpicLinkedListDavid<E> deleteNode(E value) {
 
-    Node<E> currentNode;
-
     //remove the tail node
-    if(tail.getValue() == value) {
+    if (tail.getValue() == value) {
       tail = tail.getPreviousNode();
       tail.setNextNode(null);
       this.nNodes--;
     } else {
 
-      currentNode = tail.getPreviousNode();
+      Node<E> currentNode = tail.getPreviousNode();
 
       while (currentNode != null) {
 
         if (currentNode.getValue() == value) {
           currentNode.getNextNode().setPreviousNode(currentNode.getPreviousNode());
-          if(currentNode.getPreviousNode() != null) {
+          if (currentNode.getPreviousNode() != null) {
             currentNode.getPreviousNode().setNextNode(currentNode.getNextNode());
           }
           this.nNodes--;
@@ -101,7 +100,7 @@ class EpicLinkedListDavid<E extends Object> implements List {
     int index = this.nNodes - 1;
     Node<E> currentNode = tail;
 
-    while(currentNode != null) {
+    while (currentNode != null) {
       array[index--] = currentNode.getValue();
       currentNode = currentNode.getPreviousNode();
     }
