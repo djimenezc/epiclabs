@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.ListIterator;
 
 /**
+ * Double linked list that have no access to the list head.
+ *
  * Implement an algorithm that deletes a given node from a linked list.
  * Your algorithm will receive just the node to be deleted, and won't have access to linked list head.
  * <pre>
@@ -37,7 +39,7 @@ class EpicLinkedListDavid<E extends Object> implements List {
   }
 
   /**
-   *
+   * Remove a node with an specific value and adjust the node references.
    * @param value value to remove from the list
    * @return the current list
      */
