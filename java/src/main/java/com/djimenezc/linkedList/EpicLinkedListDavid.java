@@ -44,7 +44,7 @@ class EpicLinkedListDavid<E extends Object> implements List {
    * @param value value to remove from the list
    * @return the current list
    */
-  public EpicLinkedListDavid<E> deleteNode(E value) {
+  EpicLinkedListDavid<E> deleteNode(E value) {
 
     //remove the tail node
     if (tail.getValue() == value) {
