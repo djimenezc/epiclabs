@@ -1,6 +1,9 @@
-# Delete Node
+# Epiclabs interview exercises
 
-Delete node in a Linked list. Implement an algorithm that deletes a given node from a linked list. Your algorithm will receive just the node to be deleted, and won't have access to linked list head.
+
+## Delete node in a Linked list. Implement an algorithm that deletes a given node from a linked list. Your algorithm will receive just the node to be deleted, and won't have access to linked list head.
+
+## Bits manipulation. Given a 2 dimensional int array representing a display of M*N where each pixel is represented as a 24 bits number (1st byte: R, 2nd byte: G, 3rd byte: B), writes an algorithm that output a new array M'*N' with pixels re-encoded as 6 bits number.
 
 ## Requirements
 

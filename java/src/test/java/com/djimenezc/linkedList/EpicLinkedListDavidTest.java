@@ -1,20 +1,20 @@
 package com.djimenezc.linkedList;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
 
 /**
+ * Test to check that the delete node method works successfully
  * Created by david on 12/06/2016.
  */
 public class EpicLinkedListDavidTest {
 
   private EpicLinkedListDavid<String> epicLinkedList;
-  private EpicLinkedListDavid<String> expectList;
 
   @Before
   public void setUp() {
@@ -24,7 +24,7 @@ public class EpicLinkedListDavidTest {
 
   @After
   public void tearDown() {
-    expectList = null;
+    epicLinkedList = null;
     System.out.println("@After - tearDown");
   }
 
@@ -35,12 +35,12 @@ public class EpicLinkedListDavidTest {
 
     EpicLinkedListDavid<String> currentList = epicLinkedList.deleteNode("a");
 
-    assertEquals("The node has been removed successfully", expectedArray, currentList.toArray());
+    Assert.assertArrayEquals("The node has been removed successfully", expectedArray, currentList.toArray());
 
     currentList = epicLinkedList.deleteNode("c");
     String[] expectedArray2 = {"b", "d"};
 
-    assertEquals("The node has been removed successfully", expectedArray2, currentList.toArray());
+    Assert.assertArrayEquals("The node has been removed successfully", expectedArray2, currentList.toArray());
   }
 
   @Test
@@ -50,7 +50,7 @@ public class EpicLinkedListDavidTest {
 
     EpicLinkedListDavid<String> currentList = epicLinkedList.deleteNode("d");
 
-    assertEquals("The node has been removed successfully", expectedArray, currentList.toArray());
+    Assert.assertArrayEquals("The node has been removed successfully", expectedArray, currentList.toArray());
   }
 
   @Test
@@ -60,7 +60,7 @@ public class EpicLinkedListDavidTest {
 
     EpicLinkedListDavid<String> currentList = epicLinkedList.deleteNode("b");
 
-    assertEquals("The node has been removed successfully", expectedArray, currentList.toArray());
+    Assert.assertArrayEquals("The node has been removed successfully", expectedArray, currentList.toArray());
   }
 
   @Test
@@ -71,7 +71,7 @@ public class EpicLinkedListDavidTest {
 
     EpicLinkedListDavid<String> currentList = epicLinkedList.deleteNode("b");
 
-    assertEquals("The node has been removed successfully", expectedArray, currentList.toArray());
+    Assert.assertArrayEquals("The node has been removed successfully", expectedArray, currentList.toArray());
   }
 
   @Test
@@ -81,7 +81,7 @@ public class EpicLinkedListDavidTest {
 
     EpicLinkedListDavid<String> currentList = epicLinkedList.deleteNode("z");
 
-    assertEquals("The node has been removed successfully", expectedArray, currentList.toArray());
+    Assert.assertArrayEquals("The node has been removed successfully", expectedArray, currentList.toArray());
   }
 
   @Test
@@ -89,7 +89,7 @@ public class EpicLinkedListDavidTest {
 
     String[] expectedArray = {"b", "c", "a", "d"};
 
-    assertEquals("The node has been removed successfully", expectedArray, epicLinkedList.toArray());
+    Assert.assertArrayEquals("The node has been removed successfully", expectedArray, epicLinkedList.toArray());
   }
 
 }
