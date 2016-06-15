@@ -39,37 +39,51 @@ class EpicLinkedListDavid<E extends Object> implements List {
   }
 
   /**
-   * Remove a node with an specific value and adjust the node references.
+   * Removes a node with an specific value and adjust the node references.
    *
    * @param value value to remove from the list
    * @return the current list
    */
   EpicLinkedListDavid<E> deleteNode(E value) {
 
-    //remove the tail node
     if (tail.getValue() == value) {
-      tail = tail.getPreviousNode();
-      tail.setNextNode(null);
-      this.nNodes--;
+      removeTail();
     } else {
-
-      Node<E> currentNode = tail.getPreviousNode();
-
-      while (currentNode != null) {
-
-        if (currentNode.getValue() == value) {
-          currentNode.getNextNode().setPreviousNode(currentNode.getPreviousNode());
-          if (currentNode.getPreviousNode() != null) {
-            currentNode.getPreviousNode().setNextNode(currentNode.getNextNode());
-          }
-          this.nNodes--;
-          break;
-        }
-        currentNode = currentNode.getPreviousNode();
-      }
+      removeNodeInTheMiddle(value);
     }
 
     return this;
+  }
+
+  /**
+   * Removes the last node of the list
+   */
+  private void removeTail() {
+    tail = tail.getPreviousNode();
+    tail.setNextNode(null);
+    this.nNodes--;
+  }
+
+  /**
+   * Removes a node that is in the middle of the list
+   *
+   * @param value
+   */
+  private void removeNodeInTheMiddle(E value) {
+    Node<E> currentNode = tail.getPreviousNode();
+
+    while (currentNode != null) {
+
+      if (currentNode.getValue() == value) {
+        currentNode.getNextNode().setPreviousNode(currentNode.getPreviousNode());
+        if (currentNode.getPreviousNode() != null) {
+          currentNode.getPreviousNode().setNextNode(currentNode.getNextNode());
+        }
+        this.nNodes--;
+        break;
+      }
+      currentNode = currentNode.getPreviousNode();
+    }
   }
 
   @Override
