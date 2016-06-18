@@ -1,6 +1,6 @@
 package com.djimenezc.bitsManipulation;
 
-import java.util.Random;
+import com.djimenezc.random.RandomGeneratorUtil;
 
 /**
  * Class that manages 24 bits numbers, RGB (Red Green Blue) pixel color
@@ -36,9 +36,9 @@ class RgbColorHelper {
    */
   static int getRgbColor(int red, int green, int blue) {
 
-    int rgb = getUnsignedValue(red);
-    rgb = (rgb << 8) + getUnsignedValue(green);
-    rgb = (rgb << 8) + getUnsignedValue(blue);
+    int rgb = RandomGeneratorUtil.getUnsignedValue(red);
+    rgb = (rgb << 8) + RandomGeneratorUtil.getUnsignedValue(green);
+    rgb = (rgb << 8) + RandomGeneratorUtil.getUnsignedValue(blue);
 
     return rgb;
   }
@@ -50,24 +50,7 @@ class RgbColorHelper {
    */
   private static byte generateRandomByte() {
 
-    int MIN = 0;
-    int MAX = 255;
-
-    Random random = new Random();
-    int range = MAX - MIN + 1;
-    int value = random.nextInt() % range;
-
-    return (byte) ((byte) MIN + value);
-  }
-
-  /**
-   * Converts a number interpreted as signed into a unsigned value
-   *
-   * @param value signed number
-   * @return unsigned number
-   */
-  private static int getUnsignedValue(int value) {
-    return value & 0xFF;
+    return ((byte) RandomGeneratorUtil.getRandomInteger(0, 255));
   }
 
   static int[][] generateRandomColorMap(int nRow, int nColumn) {
