@@ -1,8 +1,14 @@
 package com.djimenezc.duplicatedUrls;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 
 
 /**
@@ -27,6 +33,15 @@ public class UrlCrawlerTest {
 
   @Test
   public void testSearchDuplicatedUrls() throws Exception {
+
+    Path currentRelativePath = Paths.get("");
+    String filePath = currentRelativePath.toAbsolutePath().toString() + "/top-1m.csv";
+    File file = new File(filePath);
+
+    List<String> duplicatedUrls = urlCrawler.findDuplicatedLines(file);
+
+    Assert.assertNotNull(duplicatedUrls);
+    Assert.assertTrue("Found some duplicated lines", duplicatedUrls.size() > 0);
 
   }
 
