@@ -7,6 +7,8 @@
 
 ## Find integer. Given a file that contains 4 billions of non negative integers (assume int: 4 bytes per number), write an algorithm that output a single non negative integer that is not contained in the file. Assume you have 1Gb of memory available for this.
 
+## Duplicated url’s. You have a file with 10 billion of urls (one per line). These are the full list of urls to be crawled by your crawler. How do you determine what url’s are duplicated? Assume you have just 1 GB of memory available for this.
+
 ## Requirements
 
 - [Java SE](http://www.oracle.com/technetwork/java/javase/overview)
