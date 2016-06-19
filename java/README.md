@@ -9,6 +9,10 @@
 
 ## Duplicated url’s. You have a file with 10 billion of urls (one per line). These are the full list of urls to be crawled by your crawler. How do you determine what url’s are duplicated? Assume you have just 1 GB of memory available for this.
 
+## WhatsApp. It is January 2010. You have an idea that you think is going to revolutionize the way people communicate with each other. You have thought on a name (WhatsApp!) and now you are thinking on the technical side. What do you think are the biggest technical challenges and how would you approach them? 
+   
+   Note: A 10.000 foot view on the architecture would be more than enough. Identify bottlenecks and the way you would try to solve them. A photo of something draw in a paper would be more than enough if you want to provide a diagram :)
+   
 ## Requirements
 
 - [Java SE](http://www.oracle.com/technetwork/java/javase/overview)
