@@ -13,10 +13,12 @@ import java.util.ListIterator;
  * <pre>
  * Ej: Given linked list: A -> B -> C -> D -> E
  * </pre>
- * your algorithm will be called as deleteNode(D) and resulting linked list should be A -> B-> C-> E
+ * your algorithm will be called as deleteNode(D) and resulting linked list should be
+ *    A -> B-> C-> E
  * <p>
- * In this list implementation is kept a reference to the last added element to the list. The list can be looked over
- * because each node has a reference to previous and next node in the list.
+ * In this list implementation is kept a reference to the last added element to the list.
+ * The list can be looked over because each node has a reference to previous
+ * and next node in the list.
  *
  * @author djimenezc
  */
