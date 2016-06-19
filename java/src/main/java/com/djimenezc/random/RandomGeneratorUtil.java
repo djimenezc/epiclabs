@@ -23,11 +23,11 @@ public class RandomGeneratorUtil {
    * @param value signed number
    * @return unsigned number
    */
-  public static int getUnsignedValue(int value) {
+  public static int getUnsignedInt(int value) {
     return value & 0xFF;
   }
 
-  public static int getUnsignedInt() {
+  public static int getPositiveInt() {
     return Math.abs(RandomGeneratorUtil.getRandomInteger(0, (int) Math.pow(2, 16)));
   }
 }

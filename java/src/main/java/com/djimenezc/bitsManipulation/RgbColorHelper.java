@@ -36,9 +36,9 @@ class RgbColorHelper {
    */
   static int getRgbColor(int red, int green, int blue) {
 
-    int rgb = RandomGeneratorUtil.getUnsignedValue(red);
-    rgb = (rgb << 8) + RandomGeneratorUtil.getUnsignedValue(green);
-    rgb = (rgb << 8) + RandomGeneratorUtil.getUnsignedValue(blue);
+    int rgb = RandomGeneratorUtil.getUnsignedInt(red);
+    rgb = (rgb << 8) + RandomGeneratorUtil.getUnsignedInt(green);
+    rgb = (rgb << 8) + RandomGeneratorUtil.getUnsignedInt(blue);
 
     return rgb;
   }
